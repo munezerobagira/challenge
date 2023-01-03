@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+@layer {
+  body {
+    a {
+      @apply underline;
+    }
+  }
+}

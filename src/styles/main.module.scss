@@ -1,0 +1,6 @@
+.link {
+  @apply ml-4;
+  &__undelined {
+    @apply underline;
+  }
+}
