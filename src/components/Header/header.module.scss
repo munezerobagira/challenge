@@ -1,3 +1,8 @@
 .header {
-  background-color: ;
+  &__top {
+    @apply bg-primary-light text-center py-6 font-semibold;
+  }
+  &__nav {
+    @apply flex flex-row;
+  }
 }

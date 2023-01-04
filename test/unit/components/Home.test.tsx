@@ -1,19 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import About from '../../../components/About';
+import About from '../../../src/pages/index';
 
 describe('Home', () => {
   it('render link to profile the about page', () => {
     render(<About />);
 
     const heading = screen.getByRole('heading', {
-      name: /Implemented by/i,
+      name: /Hello from Hotel\&co/i,
     });
-    const linkToProfile = screen.getByRole('link', {
-      name: /munezerobagira/,
-    });
-
     expect(heading).toBeInTheDocument();
-    expect(linkToProfile).toBeInTheDocument();
   });
 });

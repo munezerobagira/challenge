@@ -3,7 +3,7 @@ import { devices } from '@playwright/test';
 import 'dotenv/config';
 
 const config: PlaywrightTestConfig = {
-  testDir: './src/test/e2e',
+  testDir: './test/e2e',
   timeout: 30 * 1000,
   expect: {
     /**
