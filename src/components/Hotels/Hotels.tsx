@@ -3,13 +3,13 @@ import hotelStyles from './hotels.module.scss';
 import Card from './Card/Card';
 
 export interface HotelsProps {
-  hotels: hotel[];
+  hotels: hotel[] | null[];
 }
 function Hotels({ hotels }: HotelsProps) {
   return (
     <div className={`${hotelStyles.hotels}`}>
       {hotels.map((hotel) => (
-        <Card key={hotel.id} hotel={hotel} />
+        <Card key={hotel?.id} hotel={hotel} />
       ))}
     </div>
   );

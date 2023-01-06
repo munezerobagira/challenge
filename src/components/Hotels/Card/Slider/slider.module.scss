@@ -1,0 +1,12 @@
+.slider {
+  height: 200px;
+  width: 100%;
+  &_image {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    &__hidden {
+      display: none !important;
+    }
+  }
+}

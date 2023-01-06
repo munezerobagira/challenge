@@ -5,14 +5,14 @@ import { useContext } from 'react';
 import { storeContext } from '../store/StoreProvider';
 import { useQuery } from '@tanstack/react-query';
 import config from '../constants/config';
-import { SET_HOTELS } from '../store/reducer';
+import { ADD_HOTELS } from '../store/reducer';
 
 export default function Home() {
   const { hotels, dispatch } = useContext(storeContext);
   const { isLoading, error } = useQuery(['hotels'], () => {
     return fetch(`${config.baseAPI}/hotels`).then(async (res) => {
       const data = await res.json();
-      dispatch({ type: SET_HOTELS, value: data });
+      dispatch({ type: ADD_HOTELS, value: data });
     });
   });
   if (isLoading) return <h1>Loadding ...</h1>;
