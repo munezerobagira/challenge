@@ -1,4 +1,3 @@
-//TODO - refactor the name
 export default interface hotel {
   id: string;
   createdAt: Date;
@@ -7,8 +6,8 @@ export default interface hotel {
   shortLocation: string;
   size: string;
   price: number;
-  avaliabilty: {
-    start: Date;
-    end: Date;
+  availability: {
+    start: string;
+    end: string;
   };
 }

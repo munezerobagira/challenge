@@ -1,12 +1,30 @@
 .slider {
-  height: 200px;
-  width: 100%;
+  height: 250px;
+  @apply overflow-hidden;
+
   &_image {
     height: 100%;
-    width: 100%;
-    object-fit: fill;
+    @apply rounded-lg object-fill w-full overflow-hidden;
     &__hidden {
       display: none !important;
+    }
+  }
+  &_imgcontainer {
+    position: relative;
+    height: 250px;
+    width: 100%;
+  }
+  &_button {
+    position: absolute;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    @apply bg-gray-300 text-xs rounded-full text-center;
+    &__prev {
+      left: 10px;
+    }
+    &__next {
+      right: 10px;
     }
   }
 }
