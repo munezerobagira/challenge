@@ -1,0 +1,17 @@
+.indicator {
+  width: 30px;
+  height: 30px;
+  background-color: #bbb;
+  @apply @apply rounded-md;
+  &__active {
+    background-color: #8888;
+    width: 40px;
+    height: 40px;
+  }
+}
+.indicator_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}

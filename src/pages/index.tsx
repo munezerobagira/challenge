@@ -1,17 +1,21 @@
-import { Inter } from '@next/font/google';
 import Header from '../components/Header/Header';
-import HTMLHead from '../components/HTMLHead';
-
-const inter = Inter({ subsets: ['latin'] });
+import HTMLHead from '../components/Common/HTMLHead';
+import Hotels from '../components/Home/Hotels';
+import { useRef } from 'react';
+import Observer from '../components/Home/Observer';
+import { useHotelInfiniteScroll } from '../hooks';
 
 export default function Home() {
+  const ref = useRef(null);
+  const { hotels, isFetching } = useHotelInfiniteScroll(ref);
   return (
     <>
       <HTMLHead title="Hotel&co" description="Hotel reservation website" />
-      <Header title="Show total prices" link="/totalprice" />
-      <main className="">
-        <h1>Hello from Hotel&co</h1>
-      </main>
+      <Header title="This is top header" link="/about" />
+      <Hotels hotels={hotels} />
+      <Observer target={ref} className="text-center">
+        {isFetching ? 'Loading more' : 'You have reached the footer'}
+      </Observer>
     </>
   );
 }

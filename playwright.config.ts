@@ -3,7 +3,7 @@ import { devices } from '@playwright/test';
 import 'dotenv/config';
 
 const config: PlaywrightTestConfig = {
-  testDir: './src/test/e2e',
+  testDir: './test/e2e',
   timeout: 30 * 1000,
   expect: {
     /**
@@ -70,6 +70,5 @@ const config: PlaywrightTestConfig = {
     port: parseInt(process.env.TEST_PORT || '3000'),
   },
 };
-console.log(process.env.TEST_PORT);
 
 export default config;

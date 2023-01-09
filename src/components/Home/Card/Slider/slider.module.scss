@@ -1,0 +1,24 @@
+.slides {
+  height: 250px;
+  position: relative;
+  &_slide {
+    height: 250px;
+    @apply rounded-lg object-fill w-full overflow-hidden relative w-full;
+    &__hidden {
+      @apply hidden;
+    }
+  }
+  &_button {
+    position: absolute;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    @apply bg-gray-100 text-xs rounded-full text-center z-10 shadow-2xl;
+    &__prev {
+      left: 10px;
+    }
+    &__next {
+      right: 10px;
+    }
+  }
+}

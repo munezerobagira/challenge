@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import HTMLHead, { HTMLHeadProps } from '../../../components/HTMLHead';
+import HTMLHead, { HTMLHeadProps } from '../../../src/components/Common/HTMLHead';
 
 describe('Home', () => {
   it('render link to profile the about page', () => {
