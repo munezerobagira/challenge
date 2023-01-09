@@ -4,6 +4,7 @@ import formatDateRange from '../../../util/formatDateRange';
 
 import cardStyles from './card.module.scss';
 import { Skeleton } from '../../Common';
+import Link from 'next/link';
 export interface CardProps {
   hotel: hotel | null;
 }
@@ -21,13 +22,15 @@ function Card({ hotel }: CardProps) {
   return (
     <div className={`${cardStyles.card}${!hotel ? '' : ''}`}>
       <Slider images={hotel.images} />
-      <div className="px-2">
-        <h3>{hotel?.name}</h3>
-        <p>{formatDateRange(hotel.availability.start, hotel.availability.end)}</p>
-        <p>
-          <span className="font-bold">{hotel.price}</span> night
-        </p>
-      </div>
+      <Link href={`/hotel/${hotel?.id}`}>
+        <div className="px-2">
+          <h3>{hotel?.name}</h3>
+          <p>{formatDateRange(hotel.availability.start, hotel.availability.end)}</p>
+          <p>
+            <span className="font-bold">{hotel.price}</span> night
+          </p>
+        </div>
+      </Link>
     </div>
   );
 }

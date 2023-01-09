@@ -8,13 +8,10 @@ import { useQuery } from '@tanstack/react-query';
 
 import Hotel from '../../components/hotel/Hotel';
 
-interface HotelPageProps {
-  id: string;
-}
-
 function HotelPage() {
   const router = useRouter();
-  const { isLoading, data: hotel } = useQuery<HotelInterface>(['hotel'], async () => {
+  const hotelId = typeof router.query?.id === 'string' ? router.query.id : '';
+  const { isLoading, data: hotel } = useQuery<HotelInterface>(['getHotel', hotelId], async () => {
     const res = await fetch(`${config.baseAPI}/hotels/${router.query?.id}`);
     const data = await res.json();
     return data;
