@@ -1,4 +1,4 @@
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { Hydrate, QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { AppProps } from 'next/app';
 import StoreProvider from '../store/StoreProvider';
 
@@ -9,7 +9,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <StoreProvider>
       <QueryClientProvider client={client}>
-        <Component {...pageProps} />
+        <Hydrate state={pageProps.dehydratedState}>
+          <Component {...pageProps} />
+        </Hydrate>
       </QueryClientProvider>
     </StoreProvider>
   );

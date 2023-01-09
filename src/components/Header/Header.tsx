@@ -8,13 +8,12 @@ export interface HeaderProps {
 }
 
 function Header({ title, link }: HeaderProps) {
-  console.log(headerStyles);
   return (
     <header>
       <section className={headerStyles.header__top}>
         <h2>
           {title}
-          <Link href={mainStyles.link} className="px-4">
+          <Link className={mainStyles.link} href={link}>
             Learn more
           </Link>
         </h2>

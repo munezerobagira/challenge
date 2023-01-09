@@ -7,7 +7,7 @@ const formatDateRange = function formatDateRange(startDate: string, endDate: str
   const endMonth = end.toLocaleString('en-us', { month: 'short' });
   const endDay = end.getDate();
 
-  if (startMonth === endMonth) {
+  if (startMonth == endMonth) {
     return `${startMonth} ${startDay} - ${endDay}`;
   } else {
     return `${startMonth} ${startDay} - ${endMonth} ${endDay}`;

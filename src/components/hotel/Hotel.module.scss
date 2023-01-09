@@ -1,0 +1,6 @@
+.grid {
+  @apply grid gap-2;
+  grid-template:
+    'a b c'
+    'a d e';
+}

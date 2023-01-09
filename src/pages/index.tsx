@@ -1,27 +1,21 @@
 import Header from '../components/Header/Header';
 import HTMLHead from '../components/Common/HTMLHead';
-import Hotels from '../components/Hotels/Hotels';
-import { useContext } from 'react';
-import { storeContext } from '../store/StoreProvider';
-import { useQuery } from '@tanstack/react-query';
-import config from '../constants/config';
-import { SET_HOTELS } from '../store/reducer';
+import Hotels from '../components/Home/Hotels';
+import { useRef } from 'react';
+import Observer from '../components/Home/Observer';
+import { useHotelInfiniteScroll } from '../hooks';
 
 export default function Home() {
-  const { hotels, dispatch } = useContext(storeContext);
-  const { isLoading, error } = useQuery(['hotels'], () => {
-    return fetch(`${config.baseAPI}/hotels`).then(async (res) => {
-      const data = await res.json();
-      dispatch({ type: SET_HOTELS, value: data });
-    });
-  });
-  if (isLoading) return <h1>Loadding ...</h1>;
-
+  const ref = useRef(null);
+  const { hotels, isFetching } = useHotelInfiniteScroll(ref);
   return (
     <>
       <HTMLHead title="Hotel&co" description="Hotel reservation website" />
-      <Header title="Show total prices" link="/totalprice" />
+      <Header title="This is top header" link="/about" />
       <Hotels hotels={hotels} />
+      <Observer target={ref} className="text-center">
+        {isFetching ? 'Loading more' : 'You have reached the footer'}
+      </Observer>
     </>
   );
 }

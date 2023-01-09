@@ -70,6 +70,5 @@ const config: PlaywrightTestConfig = {
     port: parseInt(process.env.TEST_PORT || '3000'),
   },
 };
-console.log(process.env.TEST_PORT);
 
 export default config;
