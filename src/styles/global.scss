@@ -4,7 +4,7 @@
 @tailwind variants;
 body {
   a {
-    @apply underline;
+    @apply no-underline;
   }
 }
 h1,

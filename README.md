@@ -19,11 +19,13 @@
   - Context API for State managment
   - Playwright for end-to-end testing along with lighthouse
   ### Perfomance
-  - for the opmitimization of an image I have used the next/image which has placeholder and it improve significantly the loading of image by providing small blurred image when the real image is being fetched. This also help in implementing
+  - for the opmitimization of an image, I have used the next/image which has placeholder and it improve significantly the loading of image by providing small blurred image when the real image is being fetched. This also help in implementing
   - Removing the unncessary dependencies, Using the many dependencies can increase the bundle size
   - Caching has been one way to go improve the perfomance of the website for second time load. PWA can also be used.
+  - I have performed the testing using the lighthouse
+  -
 
-After making research on the end-to-end testing, I decided to use the playwright as it provides many options fo testing different browser environmment. And the system was expect
+After making research on the end-to-end testing, I decided to use the playwright as it provides many options fo testing different browser environmment.
 
 ## Code source
 

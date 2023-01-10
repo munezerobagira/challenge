@@ -3,4 +3,7 @@
   &__undelined {
     @apply underline;
   }
+  &__silent {
+    @apply no-underline;
+  }
 }
