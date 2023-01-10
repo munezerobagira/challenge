@@ -7,7 +7,7 @@ test('homepage has title and links to intro page', async ({ page }) => {
   await expect(page).toHaveTitle(/Playwright/);
 
   // create a locator
-  const getStarted = page.getByRole('link', { name: 'Get started' });
+  const getStarted = page.getByRole('link', { name: 'Hotel&co' });
 
   // Expect an attribute "to be strictly equal" to the value.
   await expect(getStarted).toHaveAttribute('href', '/docs/intro');

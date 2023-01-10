@@ -10,9 +10,7 @@ function Hotels({ hotels }: HotelsProps) {
   return (
     <div className={`${hotelStyles.hotels}`}>
       {hotels.map((hotel, key) => (
-        <Link href={`/hotel/${hotel?.id}`} key={hotel?.id || key}>
-          <Card hotel={hotel} />
-        </Link>
+        <Card hotel={hotel} key={hotel?.id || key} />
       ))}
     </div>
   );

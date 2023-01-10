@@ -20,9 +20,9 @@ function Hotel({ hotel }: HotelProps) {
           </div>
         </div>
 
-        <div className="grid gap-2  ">
+        <div className={hotelStyles.grid}>
           {[400, 180, 180, 180, 180].map((value, key) => {
-            return <Skeleton key={key} height={value} width="100%" />;
+            return <Skeleton key={key} height="auto" width="100%" className={hotelStyles.grid_item} />;
           })}
         </div>
       </div>
@@ -35,10 +35,14 @@ function Hotel({ hotel }: HotelProps) {
     );
   return (
     <div className="container">
-      <h1>{hotel.name}</h1>
-      <div className="grid">
+      <h1 className="my-2">{hotel.name}</h1>
+      <div className={hotelStyles.grid}>
         {hotel.images.map(({ url, altText, hash }, key) => {
-          return <Image src={url} alt={altText} blurDataURL={hash} placeholder="blur" key={key} fill={true} />;
+          return (
+            <div key={key} className={hotelStyles.grid_item}>
+              <Image src={url} alt={altText} blurDataURL={hash} placeholder="blur" fill={true} />
+            </div>
+          );
         })}
       </div>
     </div>
